@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEALMITRA | Smart Canteen</title>
+  <link rel="icon" type="image/png" href="mealmitra.png" />
+
+  <style>
+    /* ======== Global Styles ======== 🍽️*/
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom right, #dbeafe, #f3e8ff);
+      padding: 20px;
+    }
+
+    /* ======== Card ======== */
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 32px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 32px;
+      font-weight: 700;
+      color: #ee2121; /* primary */
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #80746b;
+      margin-bottom: 24px;
+    }
+
+    /* ======== Buttons ======== */
+    .button-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button.primary {
+      background-color: #e23131;
+      color: white;
+      border-color: #ec5f08;
+    }
+
+    button.outline {
+      background-color: white;
+      color: #f63b3b;
+      border-color: #e75151;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    /* ======== Form ======== */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .error {
+      color: #dc2626;
+      font-size: 13px;
+      margin-top: -4px;
+    }
+
+    .submit-btn {
+      margin-top: 10px;
+      background-color: #b7160d;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .submit-btn:hover {
+      background-color: #d50000;
+    }
+
+    /* ======== Demo Credentials ======== */
+    .demo {
+      background: #f3f4f6;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #b06464;
+    }
+
+    .demo p {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="title">MEALMITRA</h1>
+    <p class="subtitle">Smart Canteen Management</p>
+
+    <div class="button-group">
+      <button id="loginTab" class="primary">Login</button>
+      <button id="registerTab" class="outline">Register</button>
+    </div>
+
+    <form id="authForm">
+      <div>
+        <label>Role</label>
+        <div class="button-group">
+          <button type="button" id="customerBtn" class="primary">Customer</button>
+          <button type="button" id="adminBtn" class="outline">Admin</button>
+        </div>
+      </div>
+
+      <div id="nameField" style="display: none;">
+        <label>Name</label>
+        <input type="text" id="nameInput" placeholder="Your name" />
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input type="email" id="emailInput" placeholder="your@email.com" required />
+      </div>
+
+      <div>
+        <label>Password</label>
+        <input type="password" id="passwordInput" placeholder="••••••••" required />
+      </div>
+
+      <p id="errorMsg" class="error"></p>
+
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+
+    <div class="demo">
+      <p><strong>Demo Credentials:</strong></p>
+      <p>Admin: admin@mealmitra.com / password123</p>
+      <p>Customer: user@mealmitra.com / password123</p>
+    </div>
+  </div>
+
+  <script>
+    const loginTab = document.getElementById("loginTab");
+    const registerTab = document.getElementById("registerTab");
+    const nameField = document.getElementById("nameField");
+    const form = document.getElementById("authForm");
+    const errorMsg = document.getElementById("errorMsg");
+    const submitBtn = form.querySelector(".submit-btn");
+    const customerBtn = document.getElementById("customerBtn");
+    const adminBtn = document.getElementById("adminBtn");
+
+    let isLogin = true;
+    let role = "customer";
+
+    // Toggle Login/Register
+    loginTab.onclick = () => {
+      isLogin = true;
+      nameField.style.display = "none";
+      loginTab.className = "primary";
+      registerTab.className = "outline";
+      submitBtn.textContent = "Login";
+      errorMsg.textContent = "";
+    };
+
+    registerTab.onclick = () => {
+      isLogin = false;
+      nameField.style.display = "block";
+      loginTab.className = "outline";
+      registerTab.className = "primary";
+      submitBtn.textContent = "Register";
+      errorMsg.textContent = "";
+    };
+
+    // Toggle Role
+    customerBtn.onclick = () => {
+      role = "customer";
+      customerBtn.className = "primary";
+      adminBtn.className = "outline";
+    };
+    adminBtn.onclick = () => {
+      role = "admin";
+      adminBtn.className = "primary";
+      customerBtn.className = "outline";
+    };
+
+    // Handle Form Submission (Demo Only)
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const email = document.getElementById("emailInput").value;
+      const password = document.getElementById("passwordInput").value;
+
+      // Mock authentication
+      if (isLogin) {
+        if (
+          (email === "admin@mealmitra.com" && password === "password123" && role === "admin") ||
+          (email === "user@mealmitra.com" && password === "password123" && role === "customer")
+        ) {
+          alert("✅ Login successful as " + role + "!");
+        } else {
+          errorMsg.textContent = "Invalid email, password, or role";
+        }
+      } else {
+        if (email === "admin@mealmitra.com" || email === "user@mealmitra.com") {
+          errorMsg.textContent = "Email already exists or registration failed";
+        } else {
+          alert("✅ Registration successful as " + role + "!");
+        }
+      }
+    };
+  </script>
+</body>
+</html>

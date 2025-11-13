@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOMATO-Food Delivery</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Body Background with Overlay */
+        body {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url("https://blog.tubikstudio.com/wp-content/uploads/2018/04/food-delivery-app-ui-design-tubik-studio-1024x683.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(179, 0, 0, 0.9); /* dark red with transparency */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        header div {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        header span a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header span a:hover {
+            color: #ffcccb; /* light red hover */
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        main div {
+            font-size: 26px;
+            font-weight: bold;
+            color: #ff4d4d; /* brighter red */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        main p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(246, 245, 245, 0.95);
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            color: #000000;
+            border-top: 2px solid #e60303;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>ZOMATO</div>
+        <span>
+            <a href="/home">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact</a>
+        </span>
+    </header>
+    <main>
+        <div>Order food from Zomato anytime, anywhere</div>
+        <p>Zomato is an Indian multinational company founded in 2008
+           by Deepinder Goyal and Pankaj Chaddah, initially as a
+           restaurant listing and discovery platform called Foodiebay
+           before rebranding to Zomato in 2010.
+        </p>
+    </main>
+    <footer>
+        <div>© 2025 Zomato — All Rights Reserved</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canteen Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:
+        linear-gradient(rgba(221, 214, 214, 0.722), rgba(175, 109, 43, 0.85), rgba(160, 16, 16, 0.722)),
+        url('https://cbx-prod.b-cdn.net/COLOURBOX17604429.jpg?width=4000&height=4000&quality=70');
+      /* your local image */
+      background-size: 300px;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* rgba(138, 48, 48, 0.85 */
+
+    .login-container {
+      background: rgba(221, 214, 214, 0.722);
+      /* slight transparency */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      width: 320px;
+      text-align: center;
+      border-top: 8px solid #8b0000;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #8b0000;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .show-password {
+      margin-top: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    .btn {
+      background: #8b0000;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #600000;
+    }
+
+    .extra-links {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .extra-links a {
+      color: #8b0000;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>SRS Smart Canteen Management Login</h2>
+    <form>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <label class="show-password">
+          <input type="checkbox" onclick="togglePassword()"> Show Password
+        </label>
+      </div>
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <div class="extra-links">
+      <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passField = document.getElementById("password");
+      passField.type = passField.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+
+</html>

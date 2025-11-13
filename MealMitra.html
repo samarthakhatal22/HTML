@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍽 MealMitra | Smart Canteen Management</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {   /*rgba(221, 214, 214, 0.722), rgba(175, 109, 43, 0.85), rgba(160, 16, 16, 0.722*/
+      background: linear-gradient(135deg,rgb(236, 177, 177), rgba(175, 109, 43, 0.85), rgb(209, 20, 20));
+            color: #ffffff;
+            overflow-x: hidden;
+    }   /*#f3e589,#f79940 ,#ee0303*/
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background: rgba(242, 1, 1, 0.9);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fffefe;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo span {
+      color: #fefefd;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ef733e;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #0c0202, #111010);
+      border: none;
+      padding: 10px 22px;
+      color: rgb(239, 235, 235);
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 100px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 550px;
+      animation: fadeInLeft 1s ease;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: rgba(242, 1, 1, 0.9);
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 span {
+      color: #f3ec17;
+    }
+
+    .hero-text p {
+      color: #020202;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .hero-text .btn {
+      font-size: 1rem;
+    }
+
+    .hero-img img {
+      width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Features */
+    .features {
+      text-align: center;
+      padding: 80px 60px;
+      background: rgb(244, 241, 241);
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      color: #f64a00;
+      margin-bottom: 40px;
+    }
+
+    .feature-box {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #fff3e6, #f7b4b4);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      padding: 25px;
+      width: 280px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #ff7b00;
+    }
+
+    .card h3 {
+      color: #ff4d00;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #121111;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(242, 1, 1, 0.9);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 15px 30px;
+      }
+      .hero {
+        flex-direction: column;
+        padding: 60px 30px;
+        text-align: center;
+      }
+      .hero-img img {
+        width: 90%;
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">🍽Meal<span>Mitra</span></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+      <a href="login.jsp"><button class="btn">Login</button></a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Smart <span>Canteen</span> Management</h1>
+      <p>MealMitra helps automate food orders, manage menus, and track orders seamlessly — designed for colleges and offices.</p>
+      <a href="register.jsp"><button class="btn">Get Started</button></a>
+    </div>
+    <div class="hero-img">
+      <img src="image\Red Bold Modern iOS Icon.png" alt="Canteen Food">
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <h2>Why Choose MealMitra?</h2>
+    <div class="feature-box">
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Fast Ordering</h3>
+        <p>Order meals instantly with real-time updates and reduced queue times.</p>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Smart Dashboard</h3>
+        <p>Admins can manage menu items, prices, and orders from one place.</p>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Digital Payments</h3>
+        <p>Integrated payment system for seamless and cashless transactions.</p>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Track Orders</h3>
+        <p>Customers can track their orders in real time and get instant updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>© 2025 MealMitra | Designed for Smart Canteen Systems</p>
+  </footer>
+</body>
+</html>
